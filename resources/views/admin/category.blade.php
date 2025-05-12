@@ -3,6 +3,20 @@
 
 <head>
     @include('admin.css')
+
+    <style>
+        input[type='text'] {
+            width: 400px;
+            height: 50px;
+        }
+
+        .div_deg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,7 +27,19 @@
     <div class="page-content">
         <div class="page-header">
             <div class="container-fluid">
-                @include('admin.body')
+
+                <h1 style="color: white">Add Category</h1>
+
+                <div class="div_deg">
+                    <form action="{{ url('admin/add_category') }}" method="POST">
+                        @csrf
+                        <div>
+                            <input type="text" name="category_name">
+                            <input class="btn btn-primary" type="submit" value="Add Category">
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
